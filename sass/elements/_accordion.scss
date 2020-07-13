@@ -1,0 +1,102 @@
+.accordion {
+    .accordion-block {
+
+        // case default
+        .accordion-head {
+            padding: 15px;
+
+            i {
+                font-size: 3.0rem;
+            }
+
+            a {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #ffffff;
+            }
+
+            .approach-name {
+                text-transform: uppercase;
+                display: inline-block;
+                font-size: 2.2rem;
+                margin-left: 15px;
+            }
+            .approach-name-subtext {
+                font-size: 1rem;
+                font-weight: 100;
+                display: inline-block;
+                white-space: pre;
+                margin-left: 6px;
+            }
+        }
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            p {
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        // case active
+        &.active {
+            .accordion-content {
+                display: block;
+                background: #f5f5f5;
+            }
+        }
+    }
+
+    &.novarca-accordion {
+
+        .accordion-head {
+            a {
+                display: flex;
+                align-items: center;
+
+                .apporach-title-icon-wrapper {
+                    flex-basis: 25%;
+                    text-align: center;
+                }
+
+            }
+            i {
+                //font-size: 6rem;
+            }
+            .approach-name,
+            .approach-name-subtext{
+                display: block;
+                margin-left: 0;
+            }
+        }
+
+        $accordion-head-colors: #0f3649, #04508e, #1677ad, #1c9fcc, #3ac5ef;
+        @for $i from 1 through length($accordion-head-colors) {
+            .accordion-block:nth-child( #{$i} ) {
+                .accordion-head {
+                    background-color: nth($accordion-head-colors, $i);
+                }
+            }
+        }
+
+        .feature-content {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+
+            .feature-content-left {
+                flex-basis: 20%;
+                flex-grow: 0;
+                text-align: center;
+                img {
+                    width: 30px;
+                    max-width: 30px;
+                }
+            }
+            .feature-content-right {
+                flex-basis: 80%;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+    //font-size: ($sizeValue * 16) * 1px;
+    //font-size: $sizeValue * 1rem;
+    font-size: ($sizeValue * 20) * 1px;
+    font-size: $sizeValue * 2rem;
+}
+
+// Center block
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+    content: "";
+    display: table;
+    table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+    clear: both;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+    width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+// Responsive Mixins
+// xs = 0 - 425
+// sm = 425 and up
+// md = 768 and up
+// lg = 990 and up
+// xl = 1200 and up
+
+
+// Desktop first
+@mixin breakpoint-down( $class ) {
+    @if $class == xs {
+        @media (max-width: 575px) {
+            @content;
+        }
+    }
+    @else if $class == sm {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $class == md {
+        @media (max-width: 991px) {
+            @content;
+        }
+    }
+    @else if $class == lg {
+        @media (max-width: 1199px) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Only xs, sm, md, lg, xl breakpoints are supported.";
+    }
+}
+
+ // mobile first
+ @mixin breakpoint-up( $class ) {
+
+    @if $class == xs {
+        @media (min-width: 0) {
+            @content;
+        }
+    }
+
+    @else if $class == sm {
+        @media (min-width: 576px) {
+            @content;
+        }
+    }
+
+    @else if $class == md {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $class == xl {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Only xs, sm, md, lg, xl breakpoints are supported.";
+    }
+ }

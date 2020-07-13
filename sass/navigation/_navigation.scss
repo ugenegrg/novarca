@@ -1,0 +1,59 @@
+header#masthead {
+    &.fixed {
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 1 );
+        box-shadow: 1px 1px 3px 3px #ccc;
+    }
+
+    .flex-container {
+        position: relative;
+        align-items: center;
+
+        @media screen and (max-width: 767px) {
+            align-items: flex-start;
+        }
+        .site-branding {
+            position: relative;
+            flex-basis: 25%;
+
+            span.novarca-menu-toggler {
+                display: none;
+            }
+
+            .custom-logo {
+                max-width: 170px;
+            }
+
+            @media screen and (max-width: 767px) {
+                width: 100%;
+                z-index: 2;
+                background: #fff;
+
+                span.novarca-menu-toggler {
+                    display: block;
+                    position: absolute;
+                    right: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+@import "links";
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+@import "menus";

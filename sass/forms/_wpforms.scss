@@ -1,0 +1,108 @@
+.wpforms-custom-icons {
+    position: relative !important;
+
+    input {
+        padding-left: 30px !important;
+    }
+    select {
+        appearance: none;
+        padding-left: 30px !important;
+        option {
+            appearance: none;
+        }
+    }
+}
+
+.wpforms-custom-icons:before {
+    font-family: "Font Awesome 5 Free";
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 51%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.wpforms-custom-icons:after {
+    font-family: "Font Awesome 5 Free";
+    display: block;
+    position: absolute;
+    left: 56%;
+    top: 51%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ccc;
+
+    @media (max-width: 600px) {
+        left: auto;
+        right: 10px;
+    }
+}
+
+.wpforms-custom-icons.icon-user input {
+    background: none !important;
+}
+
+.wpforms-custom-icons.icon-user:before {
+    content: "\f007";
+}
+
+.wpforms-custom-icons.icon-email:before {
+    content: "\f0e0";
+}
+
+.wpforms-custom-icons.icon-university:before {
+    content: "\f19c";
+}
+
+.wpforms-custom-icons.icon-phone-alt:before {
+    content: "\f879";
+}
+
+.wpforms-custom-icons.icon-question-circle:before {
+    content: "\f059";
+}
+
+.wpforms-custom-icons.icon-question-circle:after {
+    content: "\f107";
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-submit.btn.primary {
+    padding: 12px 24px;
+
+    border: 1px solid #0088be;
+    //border: 1px solid #132936;
+    border-radius: 0;
+    background-color: #fff;
+    color: #132936;
+    -webkit-transition: all .15s ease-in-out 0s;
+    transition: all .15s ease-in-out 0s;
+    display: inline-block;
+    line-height: .8em;
+    min-width: 205px;
+    text-align: center;
+    &:hover, &.active {
+        background-color: #0088be;
+        color: #fff;
+    }
+}
+
+div.wpforms-container-full .wpforms-form select {
+    color: #9d9d9d !important;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #9d9d9d;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #9d9d9d;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #9d9d9d;
+}
